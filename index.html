@@ -3,27 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Roba — Front-end developer & UI designer. Fresh graduate in Information Technology and Computing.">
-  <title>Roba | Front-end & UI Design</title>
+  <meta name="description" content="Roba — UI/UX Designer & Front-end Developer. Information Technology & Computing graduate.">
+  <title>Roba | UI/UX Designer & Front-End Developer</title>
+  
+  <!-- 🎨 الخطوط الجديدة: Plus Jakarta Sans (العناوين والنصوص) + Space Mono (التفاصيل التقنية) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg: #0b0d12;
       --bg-alt: #12151d;
       --surface: #171b26;
       --surface-hover: #1e2433;
-      --text: #eef1f6;
-      --text-muted: #93a0b8;
-      --accent: #7c9cff;
-      --accent-soft: rgba(124, 156, 255, 0.14);
-      --accent-glow: rgba(124, 156, 255, 0.35);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #48e5c2;
+      --accent-soft: rgba(72, 229, 194, 0.1);
+      --accent-glow: rgba(72, 229, 194, 0.25);
       --border: rgba(255, 255, 255, 0.08);
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      --radius: 18px;
-      --font-body: "DM Sans", system-ui, sans-serif;
-      --font-display: "Fraunces", Georgia, serif;
+      --radius: 16px;
+      
+      /* 🔤 نظام الخطوط الجديد (2 Fonts Maximum) */
+      --font-main: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "Space Mono", monospace;
+      
       --header-height: 72px;
       --max-width: 1120px;
     }
@@ -34,14 +40,15 @@
 
     body {
       margin: 0;
-      font-family: var(--font-body);
+      font-family: var(--font-main);
       font-size: 1rem;
       line-height: 1.6;
       color: var(--text);
       background:
-        radial-gradient(circle at 85% 10%, rgba(124, 156, 255, 0.12), transparent 28%),
-        radial-gradient(circle at 10% 90%, rgba(124, 156, 255, 0.06), transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(72, 229, 194, 0.08), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(124, 156, 255, 0.05), transparent 35%),
         var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
 
     img { max-width: 100%; display: block; }
@@ -49,6 +56,7 @@
     ul { list-style: none; margin: 0; padding: 0; }
     strong { color: var(--accent); font-weight: 600; }
 
+    /* Header & Nav */
     .site-header {
       position: fixed;
       inset: 0 0 auto;
@@ -70,16 +78,18 @@
     }
 
     .logo {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
+      font-family: var(--font-main);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
     }
 
     .nav-links { display: flex; gap: 2rem; }
 
     .nav-links a {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      font-weight: 500;
       color: var(--text-muted);
       transition: color 0.2s ease;
     }
@@ -115,60 +125,60 @@
 
     .section-header {
       display: flex;
-      align-items: baseline;
-      gap: 1rem;
+      align-items: center;
+      gap: 0.75rem;
       margin-bottom: 2.5rem;
     }
 
     .section-number {
+      font-family: var(--font-mono);
       font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-weight: 700;
       color: var(--accent);
     }
 
     .section-header h2 {
       margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
       letter-spacing: -0.03em;
     }
 
-    .section-note {
-      margin: -1.5rem 0 2rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
+    /* Hero Section */
     .hero {
       max-width: var(--max-width);
       margin: 0 auto;
       min-height: calc(100vh - var(--header-height));
       padding: 4rem 1.5rem 5rem;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
       gap: 3rem;
     }
 
+    /* 🏷️ Hero Label Badge المُعدل بأناقة */
     .hero-label {
-      display: inline-block;
-      margin: 0 0 1rem;
-      padding: 0.35rem 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 1.25rem;
+      padding: 6px 16px;
       border-radius: 999px;
       background: var(--accent-soft);
+      border: 1px solid rgba(72, 229, 194, 0.2);
       color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     .hero h1 {
       margin: 0 0 0.75rem;
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 7vw, 5rem);
-      line-height: 1.05;
+      font-size: clamp(2.75rem, 6vw, 4.25rem);
+      font-weight: 800;
+      line-height: 1.1;
       letter-spacing: -0.04em;
     }
 
@@ -176,17 +186,17 @@
 
     .hero-tagline {
       margin: 0 0 1.25rem;
-      font-family: var(--font-display);
-      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
-      font-style: italic;
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      font-weight: 500;
       color: var(--text-muted);
     }
 
     .hero-intro {
-      max-width: 34rem;
+      max-width: 32rem;
       margin: 0 0 2rem;
       color: var(--text-muted);
-      font-size: 1.05rem;
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -195,11 +205,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.85rem 1.4rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 999px;
       font-weight: 600;
-      font-size: 0.95rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -207,10 +217,10 @@
     .btn-primary {
       background: var(--accent);
       color: #0b0d12;
-      box-shadow: 0 12px 30px var(--accent-glow);
+      box-shadow: 0 10px 25px var(--accent-glow);
     }
 
-    .btn-primary:hover { filter: brightness(1.08); }
+    .btn-primary:hover { filter: brightness(1.1); }
 
     .btn-secondary {
       background: var(--surface);
@@ -218,7 +228,7 @@
       color: var(--text);
     }
 
-    .btn-secondary:hover { background: var(--surface-hover); }
+    .btn-secondary:hover { background: var(--surface-hover); border-color: rgba(255, 255, 255, 0.15); }
 
     .hero-visual {
       display: flex;
@@ -228,12 +238,12 @@
 
     .profile-photo {
       position: relative;
-      width: min(100%, 300px);
+      width: min(100%, 280px);
       aspect-ratio: 1;
       border-radius: 50%;
       padding: 4px;
-      background: linear-gradient(145deg, var(--accent), rgba(124, 156, 255, 0.2));
-      box-shadow: 0 0 0 1px var(--border), 0 24px 60px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(145deg, var(--accent), rgba(72, 229, 194, 0.1));
+      box-shadow: 0 0 0 1px var(--border), 0 20px 50px rgba(0, 0, 0, 0.5);
     }
 
     .profile-photo-inner {
@@ -251,41 +261,24 @@
       object-position: left center;
     }
 
+    /* About Section */
     .about-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 2.5rem;
     }
 
     .about-lead {
       margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
-      line-height: 1.35;
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      font-weight: 600;
+      line-height: 1.4;
       letter-spacing: -0.02em;
     }
 
     .about-details p { margin: 0 0 1rem; color: var(--text-muted); }
 
-    .about-highlights { margin-top: 1.5rem; display: grid; gap: 0.75rem; }
-
-    .about-highlights li {
-      position: relative;
-      padding-left: 1.25rem;
-      color: var(--text);
-    }
-
-    .about-highlights li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.65em;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
+    /* Skills Section */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -303,62 +296,149 @@
 
     .skill-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(124, 156, 255, 0.25);
+      border-color: rgba(72, 229, 194, 0.3);
     }
 
     .skill-icon {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       display: grid;
       place-items: center;
       margin-bottom: 1rem;
-      border-radius: 12px;
+      border-radius: 10px;
       background: var(--accent-soft);
       color: var(--accent);
       font-size: 1.1rem;
     }
 
-    .skill-card h3 { margin: 0 0 0.65rem; font-size: 1.15rem; }
+    .skill-card h3 { margin: 0 0 0.5rem; font-size: 1.1rem; font-weight: 700; }
 
     .skill-card p {
-      margin: 0 0 1rem;
+      margin: 0 0 1.25rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
     .skill-tags li {
-      padding: 0.3rem 0.65rem;
-      border-radius: 999px;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
       background: var(--bg-alt);
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
       color: var(--text-muted);
+      border: 1px solid var(--border);
     }
 
-    .projects-empty {
-      padding: 3rem 2rem;
-      text-align: center;
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
       background: var(--surface);
-      border: 1px dashed var(--border);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      color: var(--text-muted);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      transition: border-color 0.25s ease, transform 0.25s ease;
     }
 
-    .projects-empty p {
-      margin: 0;
-      font-size: 1.05rem;
+    .project-card:hover {
+      border-color: rgba(72, 229, 194, 0.3);
+      transform: translateY(-3px);
     }
 
-    .email-link {
+    .project-tag {
       color: var(--accent);
-      font-weight: 600;
-      transition: opacity 0.2s ease;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .email-link:hover { opacity: 0.85; }
+    .project-title {
+      margin: 0.5rem 0 0.75rem 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
 
+    .project-description {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-highlights {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .project-highlights li { margin-bottom: 0.4rem; }
+
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .project-tech span {
+      background: var(--bg-alt);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .project-actions {
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action-primary {
+      background: var(--accent);
+      color: #0b0d12;
+    }
+
+    .btn-action-primary:hover { filter: brightness(1.1); }
+
+    .btn-action-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(72, 229, 194, 0.3);
+    }
+
+    .btn-action-secondary:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+    }
+
+    /* Contact Section */
     .contact-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
@@ -368,12 +448,18 @@
 
     .contact-lead {
       margin: 0 0 1rem;
-      font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.35rem;
+      font-weight: 700;
       line-height: 1.35;
     }
 
     .contact-intro p:last-child { margin: 0; color: var(--text-muted); }
+
+    .email-link {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: underline;
+    }
 
     .contact-form {
       display: grid;
@@ -388,73 +474,61 @@
     .contact-form label {
       display: grid;
       gap: 0.45rem;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 0.85rem 1rem;
+      padding: 0.8rem 1rem;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px;
       font: inherit;
       color: var(--text);
       background: var(--bg-alt);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: border-color 0.2s ease;
     }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder { color: #5f6b82; }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: rgba(124, 156, 255, 0.5);
-      box-shadow: 0 0 0 4px rgba(124, 156, 255, 0.12);
+      border-color: var(--accent);
     }
 
-    .contact-form textarea { resize: vertical; min-height: 120px; }
-
-    .form-note { margin: 0; font-size: 0.88rem; color: var(--accent); }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
 
     .site-footer {
-      padding: 2rem 1.5rem 3rem;
+      padding: 2rem 1.5rem;
       text-align: center;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       border-top: 1px solid var(--border);
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 960px) {
-      .hero, .about-grid, .skills-grid, .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero { min-height: auto; padding-top: 3rem; }
+      .hero, .about-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-top: 2rem; }
       .hero-visual { order: -1; }
       .profile-photo { width: 220px; margin: 0 auto; }
     }
 
     @media (max-width: 720px) {
       .nav-toggle { display: flex; }
-
       .nav-links {
         position: absolute;
         top: var(--header-height);
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 0;
-        padding: 1rem 1.5rem 1.5rem;
+        left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        padding: 1rem 1.5rem;
         background: rgba(11, 13, 18, 0.98);
         border-bottom: 1px solid var(--border);
         transform: translateY(-120%);
@@ -462,35 +536,21 @@
         pointer-events: none;
         transition: transform 0.25s ease, opacity 0.25s ease;
       }
-
       .nav-links.open {
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
       }
-
-      .nav-links li { border-top: 1px solid var(--border); }
-      .nav-links a { display: block; padding: 0.85rem 0; }
-
-      .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-
-      .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-
-      .nav-toggle[aria-expanded="true"] span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-
+      .nav-links a { display: block; padding: 0.75rem 0; }
       .skills-grid { grid-template-columns: 1fr; }
-      .section { padding: 4rem 1.25rem; }
     }
   </style>
 </head>
 <body>
+
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="logo" href="#home">Roba</a>
+      <a class="logo" href="#home">Roba.</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -506,18 +566,20 @@
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-content">
-        <p class="hero-label">Front-end Development & UI Design</p>
+        <div class="hero-label">
+          UI/UX Designer & Front-End Developer
+        </div>
         <h1>Hi, I'm <span class="accent">Roba</span></h1>
         <p class="hero-tagline">Achievement fuels passion.</p>
         <p class="hero-intro">
-          Fresh graduate from theInformation Technology and Computing program,
-          building thoughtful interfaces on the web.
+          Fresh graduate in Information Technology & Computing, dedicated to crafting intuitive user experiences and clean web interfaces.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#skills">View my skills</a>
-          <a class="btn btn-secondary" href="#contact">Get in touch</a>
+          <a class="btn btn-primary" href="#projects">View My Projects</a>
+          <a class="btn btn-secondary" href="#contact">Get In Touch</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -529,138 +591,117 @@
       </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section about">
       <div class="section-header">
-        <span class="section-number">01</span>
-        <h2>About me </h2>
+        <span class="section-number">01.</span>
+        <h2>About Me</h2>
       </div>
       <div class="about-grid">
         <p class="about-lead">
-          I'm a recent IT & Computing graduate with a strong interest in
-          front-end development and UI design where code meets craft.
+          I bridge the gap between UI/UX design and front-end development where structure meets aesthetics.
         </p>
         <div class="about-details">
           <p>
-            I enjoy turning ideas into clean, usable experiences on the web.
-            From layout and typography to interaction details, I care about
-            how things look and how they feel to use.
+            I enjoy transforming complex ideas into simple, functional, and visually engaging interfaces. From wireframing to writing clean code, I focus on design consistency and user flow.
           </p>
           <p>
-            I believe that <strong>achievement fuels passion</strong> — every
-            project completed, every skill learned, pushes me to create better
-            work and grow as a developer and designer.
+            I believe that <strong>achievement fuels passion</strong> — every project completed and skill mastered inspires me to create even better experiences.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="section skills">
       <div class="section-header">
-        <span class="section-number">02</span>
+        <span class="section-number">02.</span>
         <h2>Skills</h2>
       </div>
       <div class="skills-grid">
         <article class="skill-card">
           <div class="skill-icon" aria-hidden="true">&#9670;</div>
-          <h3>Web Technologies</h3>
-          <p>HTML, CSS, and JavaScript for building responsive, accessible web interfaces.</p>
+          <h3>Front-End Development</h3>
+          <p>Building responsive, modern, and clean Web interfaces.</p>
           <ul class="skill-tags">
             <li>HTML</li>
-            <li>CSS</li>
+            <li>CSS3</li>
             <li>JavaScript</li>
           </ul>
         </article>
         <article class="skill-card">
           <div class="skill-icon" aria-hidden="true">&#9672;</div>
-          <h3>UI Design</h3>
-          <p>Layout, visual hierarchy, and user-centered design for clear and engaging experiences.</p>
+          <h3>UI/UX Design</h3>
+          <p>Creating user-centered flows, wireframes, and modern designs.</p>
           <ul class="skill-tags">
-            <li>UI Design</li>
+            <li>Figma</li>
             <li>Wireframing</li>
             <li>Visual Design</li>
           </ul>
         </article>
         <article class="skill-card">
           <div class="skill-icon" aria-hidden="true">&#9671;</div>
-          <h3>Data & Tools</h3>
-          <p>Structured data handling and productivity tools that support development workflows.</p>
+          <h3>Tools & AI Workflow</h3>
+          <p>Data handling and leveraging modern AI workflows for design & code.</p>
           <ul class="skill-tags">
             <li>SQL</li>
-            <li>Microsoft Office</li>
-            <li>AI-powered Design</li>
+            <li>Prompt Architecture</li>
+            <li>Conversational UX</li>
           </ul>
         </article>
       </div>
     </section>
 
-<section id="projects" class="section projects">
-    <div class="section-header">
-        <span class="section-number">03</span>
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <div class="section-header">
+        <span class="section-number">03.</span>
         <h2>Projects</h2>
-    </div>
-    
-    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 30px;">
-        
-        <!-- 📦 بوكس المشروع المعزول -->
-        <article class="project-card" style="background: #121216; border: 1px solid #2a2a32; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-            
-            <div>
-                <!-- التصنيف والعنوان -->
-                <span class="project-tag" style="color: #48e5c2; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Conversational UX & AI</span>
-                <h3 class="project-title" style="margin: 10px 0 14px 0; font-size: 1.4rem; color: #ffffff;">Barn’s AI Ordering Assistant</h3>
-                
-                <!-- الوصف الرئيسي -->
-                <p class="project-description" style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 18px;">
-                    Designed the conversational flows, prompt architecture, and QA testing for "Rawan" — Barn’s AI-powered WhatsApp coffee ordering assistant.
-                </p>
-
-                <!-- التفاصيل -->
-                <ul class="project-highlights" style="color: #cccccc; font-size: 0.9rem; padding-left: 18px; margin-bottom: 20px; line-height: 1.6;">
-                    <li style="margin-bottom: 8px;">Fine-tuned system prompts for natural bilingual chat (Hijazi Arabic & English).</li>
-                    <li style="margin-bottom: 8px;">Structured product catalog & automated upselling logic.</li>
-                    <li>Executed end-to-end QA testing for high accuracy & payment flow.</li>
-                </ul>
-
-                <!-- مهارات المشروع -->
-                <div class="project-tech" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
-                    <span style="background: #1e1e24; color: #e0e0e0; font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; border: 1px solid #333;">Prompt Engineering</span>
-                    <span style="background: #1e1e24; color: #e0e0e0; font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; border: 1px solid #333;">Conversational UI</span>
-                    <span style="background: #1e1e24; color: #e0e0e0; font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; border: 1px solid #333;">QA Testing</span>
-                    <span style="background: #1e1e24; color: #e0e0e0; font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; border: 1px solid #333;">Figma</span>
-                </div>
+      </div>
+      
+      <div class="projects-grid">
+        <article class="project-card">
+          <div>
+            <span class="project-tag">Conversational UX & AI</span>
+            <h3 class="project-title">Barn’s AI Ordering Assistant</h3>
+            <p class="project-description">
+              Designed conversational flows, prompt architecture, and end-to-end QA testing for "Rawan" — Barn’s AI-powered WhatsApp coffee assistant.
+            </p>
+            <ul class="project-highlights">
+              <li>Bilingual prompt architecture (Hijazi Arabic & English).</li>
+              <li>Structured digital menu & automated upselling logic.</li>
+              <li>End-to-end QA testing for order and payment accuracy.</li>
+            </ul>
+            <div class="project-tech">
+              <span>Prompt Engineering</span>
+              <span>Conversational UI</span>
+              <span>QA Testing</span>
+              <span>Figma</span>
             </div>
+          </div>
 
-            <!-- 🔘 زر لعرض الصورة/الملف -->
-            <div class="project-actions" style="border-top: 1px solid #222; padding-top: 15px; display: flex; gap: 12px;">
-                <a href="barns-chat-1.jpg" target="_blank" style="display: inline-block; background: #48e5c2; color: #000; font-weight: 600; font-size: 0.85rem; padding: 10px 16px; border-radius: 8px; text-decoration: none; transition: background 0.2s ease;">
-                    View Image 1 ↗
-                </a>
-                <a href="barns-chat-2.jpg" target="_blank" style="display: inline-block; background: transparent; color: #48e5c2; border: 1px solid #48e5c2; font-weight: 600; font-size: 0.85rem; padding: 10px 16px; border-radius: 8px; text-decoration: none;">
-                    View Image 2 ↗
-                </a>
-                <a href="barns-chat-2.jpg" target="_blank" style="display: inline-block; background: transparent; color: #48e5c2; border: 1px solid #48e5c2; font-weight: 600; font-size: 0.85rem; padding: 10px 16px; border-radius: 8px; text-decoration: none;">
-                    View Image 3 ↗
-                </a>
-            </div>
-
+          <div class="project-actions">
+            <a href="barns-chat-1.jpg" target="_blank" class="btn-action btn-action-primary">View Image 1 ↗</a>
+            <a href="barns-chat-2.jpg" target="_blank" class="btn-action btn-action-secondary">View Image 2 ↗</a>
+            <a href="barns-chat-3.jpg" target="_blank" class="btn-action btn-action-secondary">View Image 3 ↗</a>
+          </div>
         </article>
+      </div>
+    </section>
 
-    </div>
-</section>
-
+    <!-- Contact Section -->
     <section id="contact" class="section contact">
       <div class="section-header">
-        <span class="section-number">04</span>
+        <span class="section-number">04.</span>
         <h2>Contact</h2>
       </div>
       <div class="contact-grid">
         <div class="contact-intro">
           <p class="contact-lead">
-            Open to junior front-end roles, internships, and UI design opportunities.
+            Open to junior UI/UX design, front-end roles, and internship opportunities.
           </p>
           <p>
-            Email me at
-            <a class="email-link" href="mailto:rubalderi@gmail.com">rubalderi@gmail.com</a>
+            Email me at <a class="email-link" href="mailto:rubalderi@gmail.com">rubalderi@gmail.com</a>
           </p>
         </div>
         <form class="contact-form" id="contact-form">
@@ -676,22 +717,20 @@
             Message
             <textarea name="message" rows="4" placeholder="Say hello..." required></textarea>
           </label>
-          <button type="submit" class="btn btn-primary">Send message</button>
-          <p class="form-note" id="form-note" hidden>Thanks! Connect this form to your email service when you're ready to go live.</p>
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Roba. Crafted with HTML, CSS & JavaScript.</p>
+    <p>&copy; <span id="year"></span> Roba. Designed & Built with care.</p>
   </footer>
 
   <script>
     const navToggle = document.querySelector(".nav-toggle");
     const navLinks = document.querySelector(".nav-links");
     const contactForm = document.getElementById("contact-form");
-    const formNote = document.getElementById("form-note");
     const yearEl = document.getElementById("year");
 
     yearEl.textContent = new Date().getFullYear();
@@ -711,29 +750,23 @@
 
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      formNote.hidden = false;
+      alert("Thank you! Your message has been sent.");
       contactForm.reset();
     });
 
-    const revealElements = document.querySelectorAll(
-      ".section, .hero-content, .hero-visual, .skill-card, .projects-empty"
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
+    const revealElements = document.querySelectorAll(".section, .hero-content, .hero-visual, .skill-card, .project-card");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
 
     revealElements.forEach((element, index) => {
       element.classList.add("reveal");
-      element.style.transitionDelay = `${Math.min(index * 0.05, 0.35)}s`;
+      element.style.transitionDelay = `${Math.min(index * 0.05, 0.3)}s`;
       observer.observe(element);
     });
   </script>
